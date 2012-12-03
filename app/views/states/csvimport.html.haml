@@ -1,0 +1,8 @@
+%h1 CSV Import
+
+= form_tag state_import_path, :multipart => true do
+  %label{:for => "file"} Please upload your CSV:
+  = file_field_tag :file
+  = submit_tag "Upload", :id => "submit", :name => "submit", :class => "form_submit", :disabled => false, :disable_with => "Please wait..."
+
+= link_to 'Back', states_path

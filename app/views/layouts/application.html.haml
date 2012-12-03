@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title KeywordsOnRails
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body.active_admin
+    %header#header
+      %h1.site_title=KeywordsOnRails
+      %ul.header-item#tabs
+        %li=link_to 'Home', root_path
+        %li=link_to 'Active Admin', admin_root_path
+        %li=link_to 'Scraper', scrapers_path
+    - if flash[:notice]
+      %p.notice= flash[:notice]
+    - if flash[:alert]
+      %p.alert= flash[:alert]
+    = yield

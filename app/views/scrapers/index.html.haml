@@ -1,0 +1,38 @@
+#title_bar.title_bar
+  #titlebar_left
+    %h2 Scraper
+#active_admin_content.with_sidebar
+  #main_content_wrapper
+    #main_content
+      .columns
+        .column
+          .panel
+            = form_for(@scraper) do |f|
+              .field
+                = (f.label :name)
+                = (f.text_field :name)
+              .field
+                = f.label :url
+                = f.text_field :url
+              .actions
+                = f.submit
+          .panel
+            %table
+              %tr
+                %th Name
+                %th URL
+                %th Content
+                =debug @scrapers
+            - @scrapers.each do |scraper|
+              %tr
+                %td=scraper.name
+                %td=scraper.url
+                %td=scraper.websitecontent
+                %td=link_to 'Download content', downloader_scrapers_path(scraper)
+
+-#TODO
+-#1. Input box for website address (Model: website address) - save there
+-#2. List the content of the website
+-#3. Select target database (country, state, county, city)
+-#4. Choose content for scraping (Model: selected elements)
+-#5. Save content in database
