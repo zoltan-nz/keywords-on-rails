@@ -1,0 +1,19 @@
+#title_bar.title_bar
+  #titlebar_left
+    %h2
+      Scraper - Details: ID =
+      =@scraper.id
+#active_admin_content.with_sidebar
+  #main_content_wrapper
+    #main_content
+      .columns
+        .column{:style => "width: 100%"}
+          .panel
+            %h3=@scraper.name+" ---- "+@scraper.url
+            %table
+              %tr
+                %th Line
+                %th Something
+              %tr
+                %td=1
+                %td=@scraper.websitecontent

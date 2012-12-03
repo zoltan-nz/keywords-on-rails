@@ -23,4 +23,8 @@ class ScrapersController < ApplicationController
     @scraper.save
     redirect_to scrapers_path, notice: "Data updated"
   end
+
+  def show
+    @scraper = Scraper.find(params[:id])
+  end
 end

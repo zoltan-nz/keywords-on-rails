@@ -22,13 +22,13 @@
                 %th Name
                 %th URL
                 %th Content
-                =debug @scrapers
-            - @scrapers.each do |scraper|
-              %tr
-                %td=scraper.name
-                %td=scraper.url
-                %td=scraper.websitecontent
-                %td=link_to 'Download content', downloader_scrapers_path(scraper)
+                -#=debug @scrapers
+              - @scrapers.each do |scraper|
+                %tr
+                  %td=scraper.name
+                  %td=scraper.url
+                  %td=link_to 'Download content', downloader_scrapers_path(scraper)
+                  %td=link_to 'Show details', scraper_path(scraper)
 
 -#TODO
 -#1. Input box for website address (Model: website address) - save there
