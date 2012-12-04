@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202114400) do
+ActiveRecord::Schema.define(:version => 20121204165907) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -52,6 +52,34 @@ ActiveRecord::Schema.define(:version => 20121202114400) do
     t.integer  "googlecode"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "downloader_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "downloader_country_levels", :force => true do |t|
+    t.integer  "downloader_category_id"
+    t.string   "name"
+    t.text     "url"
+    t.integer  "downloader_category_content_id"
+    t.string   "xpath"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
+
+  create_table "downloader_state_levels", :force => true do |t|
+    t.integer  "downloader_category_id"
+    t.integer  "downloader_country_level_id"
+    t.string   "name"
+    t.text     "url"
+    t.string   "xpath"
+    t.integer  "downloader_content_category_id"
+    t.integer  "column_contains_counties"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "scrapers", :force => true do |t|

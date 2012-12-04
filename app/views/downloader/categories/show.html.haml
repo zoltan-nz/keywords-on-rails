@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @downloader_category.name
+
+= link_to 'Edit', edit_downloader_category_path(@downloader_category)
+\|
+= link_to 'Back', downloader_categories_path

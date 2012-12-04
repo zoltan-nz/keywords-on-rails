@@ -1,0 +1,2 @@
+module Downloader::CategoriesHelper
+end

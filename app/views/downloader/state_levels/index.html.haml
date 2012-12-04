@@ -1,0 +1,31 @@
+%h1 Listing downloader_state_levels
+
+%table
+  %tr
+    %th Category
+    %th Country level
+    %th Name
+    %th Url
+    %th Xpath
+    %th Content category
+    %th Column contains counties
+    %th
+    %th
+    %th
+
+  - @downloader_state_levels.each do |downloader_state_level|
+    %tr
+      %td= downloader_state_level.category_id
+      %td= downloader_state_level.country_level_id
+      %td= downloader_state_level.name
+      %td= downloader_state_level.url
+      %td= downloader_state_level.xpath
+      %td= downloader_state_level.content_category_id
+      %td= downloader_state_level.column_contains_counties
+      %td= link_to 'Show', downloader_state_level
+      %td= link_to 'Edit', edit_downloader_state_level_path(downloader_state_level)
+      %td= link_to 'Destroy', downloader_state_level, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New State level', new_downloader_state_level_path

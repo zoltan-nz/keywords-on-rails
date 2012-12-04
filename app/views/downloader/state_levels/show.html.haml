@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Category:
+  = @downloader_state_level.category_id
+%p
+  %b Country level:
+  = @downloader_state_level.country_level_id
+%p
+  %b Name:
+  = @downloader_state_level.name
+%p
+  %b Url:
+  = @downloader_state_level.url
+%p
+  %b Xpath:
+  = @downloader_state_level.xpath
+%p
+  %b Content category:
+  = @downloader_state_level.content_category_id
+%p
+  %b Column contains counties:
+  = @downloader_state_level.column_contains_counties
+
+= link_to 'Edit', edit_downloader_state_level_path(@downloader_state_level)
+\|
+= link_to 'Back', downloader_state_levels_path

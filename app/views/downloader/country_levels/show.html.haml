@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Category:
+  = @downloader_country_level.category_id
+%p
+  %b Name:
+  = @downloader_country_level.name
+%p
+  %b Url:
+  = @downloader_country_level.url
+%p
+  %b Content category:
+  = @downloader_country_level.content_category_id
+%p
+  %b Xpath:
+  = @downloader_country_level.xpath
+
+= link_to 'Edit', edit_downloader_country_level_path(@downloader_country_level)
+\|
+= link_to 'Back', downloader_country_levels_path

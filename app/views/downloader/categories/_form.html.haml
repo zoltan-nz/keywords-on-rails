@@ -1,0 +1,13 @@
+= form_for @downloader_category do |f|
+  - if @downloader_category.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@downloader_category.errors.count, "error")} prohibited this downloader_category from being saved:"
+      %ul
+        - @downloader_category.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit 'Save'

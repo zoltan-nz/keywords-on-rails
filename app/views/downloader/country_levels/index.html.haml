@@ -1,0 +1,27 @@
+%h1 Listing downloader_country_levels
+
+%table
+  %tr
+    %th Category
+    %th Name
+    %th Url
+    %th Content category
+    %th Xpath
+    %th
+    %th
+    %th
+
+  - @downloader_country_levels.each do |downloader_country_level|
+    %tr
+      %td= downloader_country_level.category_id
+      %td= downloader_country_level.name
+      %td= downloader_country_level.url
+      %td= downloader_country_level.content_category_id
+      %td= downloader_country_level.xpath
+      %td= link_to 'Show', downloader_country_level
+      %td= link_to 'Edit', edit_downloader_country_level_path(downloader_country_level)
+      %td= link_to 'Destroy', downloader_country_level, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Country level', new_downloader_country_level_path

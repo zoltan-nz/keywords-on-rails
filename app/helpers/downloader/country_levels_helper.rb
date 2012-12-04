@@ -1,0 +1,2 @@
+module Downloader::CountryLevelsHelper
+end

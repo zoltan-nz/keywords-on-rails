@@ -1,0 +1,31 @@
+= form_for @downloader_state_level do |f|
+  - if @downloader_state_level.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@downloader_state_level.errors.count, "error")} prohibited this downloader_state_level from being saved:"
+      %ul
+        - @downloader_state_level.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :category_id
+    = f.text_field :category_id
+  .field
+    = f.label :country_level_id
+    = f.text_field :country_level_id
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :url
+    = f.text_field :url
+  .field
+    = f.label :xpath
+    = f.text_field :xpath
+  .field
+    = f.label :content_category_id
+    = f.text_field :content_category_id
+  .field
+    = f.label :column_contains_counties
+    = f.number_field :column_contains_counties
+  .actions
+    = f.submit 'Save'
