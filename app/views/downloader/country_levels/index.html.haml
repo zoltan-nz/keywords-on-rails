@@ -13,11 +13,12 @@
 
   - @downloader_country_levels.each do |downloader_country_level|
     %tr
-      %td= downloader_country_level.category_id
+      %td= downloader_country_level.downloader_category_id
       %td= downloader_country_level.name
       %td= downloader_country_level.url
-      %td= downloader_country_level.content_category_id
+      %td= downloader_country_level.downloader_category_content_id
       %td= downloader_country_level.xpath
+      %td= link_to 'Download', downloader_country_level_download_path(downloader_country_level)
       %td= link_to 'Show', downloader_country_level
       %td= link_to 'Edit', edit_downloader_country_level_path(downloader_country_level)
       %td= link_to 'Destroy', downloader_country_level, method: :delete, data: { confirm: 'Are you sure?' }

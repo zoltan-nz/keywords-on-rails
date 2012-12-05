@@ -6,7 +6,7 @@ class CreateDownloaderStateLevels < ActiveRecord::Migration
       t.string :name
       t.text :url
       t.string :xpath
-      t.references :downloader_content_category
+      t.references :downloader_category_content
       t.integer :column_contains_counties
 
       t.timestamps

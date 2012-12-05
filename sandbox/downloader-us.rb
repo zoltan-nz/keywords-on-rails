@@ -14,13 +14,18 @@ page = agent.get(mainwebsite)
 
 states = []
 
-table = page.search("table[class='select'] tr a")
+#table = page.search("table[class='select'] tr a")
 
-table.each do |node|
-  if node['href'].include? 'census'
-    states << [node['href'], node.content]
-  end
+table = page.search("//a")
+table.each do |row|
+  pp row
 end
+#table.each do |node|
+#  pp node[]
+#  #if node['href'].include? 'census'
+#  #  states << [node['href'], node.content]
+#  #end
+#end
 
 csv = CSV.open("states.csv", "wb")
 

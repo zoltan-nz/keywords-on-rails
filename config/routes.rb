@@ -13,19 +13,19 @@ KeywordsOnRails::Application.routes.draw do
   namespace :downloader do
     resources :categories
   end
-
+  get 'downloader/country_levels/download/:id' => 'downloader/country_levels#download', :as => :downloader_country_level_download
 
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   root :to => 'home#index'
   resources :home
+
   get 'scrapers/:id/downloader' => 'scrapers#downloader', :as => :downloader_scrapers
 
   resources :scrapers
   resources :countries
   resources :states
-
 
 
   # The priority is based upon order of creation:
