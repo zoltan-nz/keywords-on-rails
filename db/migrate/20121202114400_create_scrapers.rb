@@ -3,8 +3,7 @@ class CreateScrapers < ActiveRecord::Migration
     create_table :scrapers do |t|
       t.string :name
       t.string :url
-      t.string :targetdatabase
-      t.text   :websitecontent
+      t.string :xpath
 
       t.timestamps
     end

@@ -3,7 +3,7 @@ require 'mechanize'
 require 'open-uri'
 
 class Scraper < ActiveRecord::Base
-  attr_accessible :name, :url, :targetdatabase, :websitecontent
+  attr_accessible :name, :url, :xpath
 
   def self.websitedownloader(website)
     #pp "This is websitedownloader"

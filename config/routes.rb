@@ -1,23 +1,9 @@
 KeywordsOnRails::Application.routes.draw do
 
-  namespace :downloader do
-    resources :state_levels
-  end
-
-
-  namespace :downloader do
-    resources :country_levels
-  end
-
-
-  namespace :downloader do
-    resources :categories
-  end
-  get 'downloader/country_levels/download/:id' => 'downloader/country_levels#download', :as => :downloader_country_level_download
-
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  #root :to => 'admin/dashboard#index'
   root :to => 'home#index'
   resources :home
 

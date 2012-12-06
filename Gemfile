@@ -44,3 +44,7 @@ gem 'meta_search'
 
 gem 'nokogiri'
 gem 'mechanize'
+
+gem "sass"
+
+gem "slim"
