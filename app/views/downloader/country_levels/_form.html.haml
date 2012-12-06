@@ -8,7 +8,7 @@
 
   .field
     = f.label :category_id
-    = f.number_field :category_id
+    = f.collection_select :downloader_category_id, Downloader_category.all, :id, :name
   .field
     = f.label :name
     = f.text_field :name
@@ -17,7 +17,7 @@
     = f.text_area :url
   .field
     = f.label :content_category_id
-    = f.number_field :content_category_id
+    = f.collection_select :downloader_category_content_id, Downloader_category.all, :id, :name
   .field
     = f.label :xpath
     = f.text_field :xpath
