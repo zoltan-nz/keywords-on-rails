@@ -1,29 +1,14 @@
-#title_bar.title_bar
-  #titlebar_left
-    h2 Scraper
-#active_admin_content.with_sidebar
-  #main_content_wrapper
-    #main_content
-      .columns
-        .column
-          .panel style="width: 100%"
-            = form_for @scraper, :html => {:class => "scraper_url_form"} do |f|
-              .field
-                = f.label :name
-                = f.text_field :name
-                = f.label :url
-                = f.text_field :url
-                = f.submit
-          .panel
-            table
-              tr
-                th Name
-                th URL
-                th Content
-                -#=debug @scrapers
-              - @scrapers.each do |scraper|
-                tr
-                  td=scraper.name
-                  td=scraper.url
-                  td=link_to 'Download content', downloader_scrapers_path(scraper)
-                  td=link_to 'Show details', scraper_path(scraper)
+h1 Scraper
+.container
+  =render 'form'
+  table.table
+    tr
+      th Name
+      th URL
+      th Content
+    - @scrapers.each do |scraper|
+      tr
+        td=scraper.name
+        td=scraper.url
+        td=link_to 'Download content', downloader_scrapers_path(scraper)
+        td=link_to 'Show details', scraper_path(scraper)

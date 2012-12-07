@@ -1,19 +1,25 @@
 !!!
 %html
   %head
-    %title KeywordsOnRails
-    = stylesheet_link_tag    "application", :media => "all"
+    %meta{:charset => "utf-8"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
+    %title= content_for?(:title) ? yield(:title) : "KeywordsOnRails"
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "author"}
+    = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    = yield(:head)
   %body
-    %header#header
-      %h1.site_title=KeywordsOnRails
-      %ul.header-item#tabs
-        %li=link_to 'Home', root_path
-        %li=link_to 'Active Admin', admin_root_path
-        %li=link_to 'Scraper', scrapers_path
-    - if flash[:notice]
-      %p.notice= flash[:notice]
-    - if flash[:alert]
-      %p.alert= flash[:alert]
-    = yield
+    %header.navbar.navbar-fixed-top
+      %nav.navbar-inner
+        .container
+          = render 'layouts/navigation'
+    #main{:role => "main"}
+      .container
+        .content
+          .row
+            .span12
+              = render 'layouts/messages'
+              = yield
+          %footer

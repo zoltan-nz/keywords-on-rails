@@ -1,0 +1,5 @@
+= form_for @scraper, :html => {:class => "form-inline"} do |f|
+    /.field
+    = f.text_field :name, :class=> "input-small", :placeholder => "Name"
+    = f.text_field :url, :class=> "input-large", :placeholder => "Url"
+    = f.submit :class => "btn btn-primary"
