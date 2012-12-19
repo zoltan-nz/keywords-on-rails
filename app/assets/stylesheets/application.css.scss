@@ -11,8 +11,9 @@
  *= require_self
  *= require_tree .
  */
-@import "active_admin/mixins";
-@import "active_admin/base";
+//@import "active_admin/mixins";
+//@import "active_admin/base";
+//@import "_font-awesome.scss";
 
 .content {
   background-color: #eee;
