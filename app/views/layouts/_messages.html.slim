@@ -1,0 +1,12 @@
+-if flash[:notice]
+  div class="alert alert-notice"
+    a.close data-dismiss="alert"
+      =content_tag div, msg, id="flash_notice"
+-if flash[:error]
+  div class="alert alert-error"
+    a.close data-dismiss="alert"
+      =content_tag div, msg, id="flash_error"
+-if flash[:success]
+  div class="alert alert-success"
+    a.close data-dismiss="alert"
+      =content_tag div, msg, id="flash_success"

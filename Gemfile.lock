@@ -82,10 +82,6 @@ GEM
     fastercsv (1.5.5)
     formtastic (2.2.1)
       actionpack (>= 3.0)
-    geonames_api (0.0.6.1)
-      activesupport
-      rubyzip
-      tzinfo
     haml (3.1.7)
     haml-rails (0.3.5)
       actionpack (>= 3.1, < 4.1)
@@ -211,13 +207,13 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails
   debugger
-  geonames_api (~> 0.0.6.1)
   haml-rails
   jquery-rails
   mechanize
   meta_search
   nokogiri
   rails
+  rubyzip
   sass-rails
   simple_form
   slim

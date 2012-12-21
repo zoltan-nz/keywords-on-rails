@@ -50,4 +50,4 @@ gem "slim"
 
 gem 'simple_form'
 
-gem 'geonames_api', '~> 0.0.6.1'
+gem 'rubyzip'
