@@ -1,5 +1,7 @@
 KeywordsOnRails::Application.routes.draw do
 
+  resources :geonames
+
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
@@ -12,6 +14,7 @@ KeywordsOnRails::Application.routes.draw do
   resources :scrapers
   resources :countries
   resources :states
+
 
 
   # The priority is based upon order of creation:
