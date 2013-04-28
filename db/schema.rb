@@ -54,34 +54,6 @@ ActiveRecord::Schema.define(:version => 20121221164300) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "downloader_categories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "downloader_country_levels", :force => true do |t|
-    t.integer  "downloader_category_id"
-    t.string   "name"
-    t.text     "url"
-    t.integer  "downloader_category_content_id"
-    t.string   "xpath"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-  end
-
-  create_table "downloader_state_levels", :force => true do |t|
-    t.integer  "downloader_category_id"
-    t.integer  "downloader_country_level_id"
-    t.string   "name"
-    t.text     "url"
-    t.string   "xpath"
-    t.integer  "downloader_content_category_id"
-    t.integer  "column_contains_counties"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-  end
-
   create_table "geonames", :force => true do |t|
     t.integer  "geonameid"
     t.string   "name"
@@ -109,10 +81,9 @@ ActiveRecord::Schema.define(:version => 20121221164300) do
   create_table "scrapers", :force => true do |t|
     t.string   "name"
     t.string   "url"
-    t.string   "targetdatabase"
-    t.text     "websitecontent"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.string   "xpath"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "states", :force => true do |t|
