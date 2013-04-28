@@ -1,0 +1,10 @@
+- if flash[:notice]
+  div.alert.alert-notice
+    =flash[:notice]
+    a.close data-dismiss="alert" ×
+- if flash[:error]
+  div.alert.alert-error
+    =flash[:error]
+- if flash[:success]
+  div.alert.alert-success
+    =flash[:success]
