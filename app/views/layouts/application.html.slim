@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 doctype
 html
   head
@@ -10,16 +11,39 @@ html
     = javascript_include_tag "application"
     = csrf_meta_tags
     = yield(:head)
+=======
+html
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+    title=content_for?(:title) ? yield(:title) : "KeywordsOnRails"
+    meta content="" name="description"
+    meta content="" name="author"
+    =stylesheet_link_tag "application", media="all"
+    =javascript_include_tag "application"
+    =csrf_meta_tags
+    =yield(:head)
+>>>>>>> c93f17054eeb98494e8f0ee3d385e2d1e91ae121
   body
     header.navbar.navbar-fixed-top
       nav.navbar-inner
         .container
+<<<<<<< HEAD
           = render 'layouts/navigation'
     #main role="main"
+=======
+          =render 'layouts/navigation'
+    main role="main"
+>>>>>>> c93f17054eeb98494e8f0ee3d385e2d1e91ae121
       .container
         .content
           .row
             .span12
+<<<<<<< HEAD
               = render 'layouts/messages'
               = yield
+=======
+              =render 'layouts/messages'
+              =yield
+>>>>>>> c93f17054eeb98494e8f0ee3d385e2d1e91ae121
           footer

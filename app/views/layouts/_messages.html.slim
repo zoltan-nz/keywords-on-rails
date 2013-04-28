@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 - if flash[:notice]
   div.alert.alert-notice
     =flash[:notice]
@@ -8,3 +9,17 @@
 - if flash[:success]
   div.alert.alert-success
     =flash[:success]
+=======
+-if flash[:notice]
+  div class="alert alert-notice"
+    a.close data-dismiss="alert"
+      =content_tag div, msg, id="flash_notice"
+-if flash[:error]
+  div class="alert alert-error"
+    a.close data-dismiss="alert"
+      =content_tag div, msg, id="flash_error"
+-if flash[:success]
+  div class="alert alert-success"
+    a.close data-dismiss="alert"
+      =content_tag div, msg, id="flash_success"
+>>>>>>> c93f17054eeb98494e8f0ee3d385e2d1e91ae121

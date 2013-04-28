@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202114400) do
+ActiveRecord::Schema.define(:version => 20121221164300) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -54,12 +54,65 @@ ActiveRecord::Schema.define(:version => 20121202114400) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "downloader_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "downloader_country_levels", :force => true do |t|
+    t.integer  "downloader_category_id"
+    t.string   "name"
+    t.text     "url"
+    t.integer  "downloader_category_content_id"
+    t.string   "xpath"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
+
+  create_table "downloader_state_levels", :force => true do |t|
+    t.integer  "downloader_category_id"
+    t.integer  "downloader_country_level_id"
+    t.string   "name"
+    t.text     "url"
+    t.string   "xpath"
+    t.integer  "downloader_content_category_id"
+    t.integer  "column_contains_counties"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
+
+  create_table "geonames", :force => true do |t|
+    t.integer  "geonameid"
+    t.string   "name"
+    t.string   "asciiname"
+    t.string   "alternatenames"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.string   "feature_class"
+    t.string   "feature_code"
+    t.string   "country_code"
+    t.string   "cc2"
+    t.string   "admin1_code"
+    t.string   "admin2_code"
+    t.string   "admin3_code"
+    t.string   "admin4_code"
+    t.integer  "population"
+    t.integer  "elevation"
+    t.integer  "dem"
+    t.string   "timezone"
+    t.date     "modification_date"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
   create_table "scrapers", :force => true do |t|
     t.string   "name"
     t.string   "url"
-    t.string   "xpath"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "targetdatabase"
+    t.text     "websitecontent"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "states", :force => true do |t|
