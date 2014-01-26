@@ -1,0 +1,9 @@
+# Keywords On Rails
+
+Manage your keywords for SEO project...
+
+Development in progress...
+
+## ToDo:
+
+- Create detailed feature list and requirements...
